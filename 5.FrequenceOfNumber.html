@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>5.FrequenceOfNumber</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>Count appearances of a number</h1>
+    <div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    //Write a function that counts how many times given number appears in given arrayay.
+	    //Write a test function to check if the function is working correctly.
+        
+	    var arr = [8,9,5,15,15,9,9,9,9,5,5,1,151];
+
+	    frequencyCount(arr);
+
+	    function frequencyCount(array) {
+	        var count = 0;
+	        var currentNumber;
+	        var mostFrequentcurrentNumber;
+	        var mostFrequenceCount = 1;
+
+	        for (var i = 0; i < array.length; i++) {
+	            currentNumber = array[i];
+
+                //counts appearance of the current number in the array
+	            for (var j = 0; j < array.length; j++) {
+	                if (currentNumber == array[j]) {
+	                    count++;
+
+                        //saves the best result
+	                    if (count > mostFrequenceCount) {
+	                        mostFrequentcurrentNumber = currentNumber;
+	                        mostFrequenceCount = count;
+	                    }
+	                }
+	            }
+	            count = 0;
+	        }
+
+	        jsConsole.writeLine("Given array: " + array);
+	        jsConsole.writeLine(mostFrequentcurrentNumber + " appearce " + mostFrequenceCount + " times.");
+	    }
+	</script>
+</body>
+</html>

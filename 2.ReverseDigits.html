@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>2.ReverseDigits</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="tb-number">Enter a number: </label>
+	<input type="text" id="tb-number" />
+	<a href="#" id="btn-name-number" onclick="reverseNumber()">Reverse Number</a>
+    <div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    //Write a function that reverses the digits of given decimal number. 
+	    //Example: 256 -> 652
+
+	    function reverseNumber() {
+	        var number = document.getElementById('tb-number').value;
+            
+            //if it's a negative number it keeps the negative sign
+	        if (number <  0) {
+	            jsConsole.write('-');
+	        }
+
+            //passes over every digit starting from last and writes it
+	        for (var j = number.length - 1; j >= 0; j--) {
+
+	            if (number[j] != '-') {
+	                jsConsole.write(number[j]);
+	            }
+
+	        }
+	    }
+	</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>6.ElementBiggerThanNeighbours</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>The index of the first element bigger than its two neighbours</h1>
+    <div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    //Write a function that returns the index of the first element in array that is bigger 
+	    //than its neighbors, or -1, if there’s no such element.
+
+	    var arr = [5, 78, 2, 5, 6, 87, 2, 6, 4, 64];
+	    //test array
+	    //var arr = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3];    
+
+	    biggerThanNeighbours(arr);
+
+	    function biggerThanNeighbours(array, bool) {
+	        jsConsole.writeLine(array);
+
+            //searches between the second and the element before the last one
+	        for (var i = 1; i < array.length - 1; i++) {
+	            var currentNumber = array[i];
+	            var previousNumber = array[i - 1];
+	            var nextNumber = array[i + 1]; 
+
+	                //checks if the element is bigger and if true stops after the first found
+	                if (currentNumber > previousNumber && currentNumber > nextNumber) {
+	                    bool = array.indexOf(currentNumber);
+	                    break;
+	                }
+	                else {
+	                    bool= -1;	                    
+	                }
+	        }
+	        jsConsole.writeLine("Index: " +  bool);
+	    } 	       
+	</script>
+</body>
+</html>

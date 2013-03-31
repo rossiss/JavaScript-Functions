@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>1.LastDigitAsWord</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="tb-number">Enter a number: </label>
+	<input type="text" id="tb-number" />
+	<a href="#" id="btn-name-number" onclick="checkLastDigit()">Last digit in English</a>
+    <div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    //Write a function that returns the last digit of given integer as an English word.
+	    //Examples: 512 -> "two", 1024 -> "four", 12309 -> "nine"
+
+        //reads the number and finds the last digit
+	    function checkLastDigit() {
+	        var number = document.getElementById('tb-number').value;
+
+            //checks for negative number and returns positive (Math.abs() didn't work)
+	        if (number < 0) {
+	            number *= -1;
+	        }
+
+	        var lastDigit = number;
+
+	        if (number > 10) {
+	            lastDigit = number % 10;
+	        }
+	        else {
+	            return;
+	        }
+
+	        digitName(lastDigit);
+	    }
+         
+        //gives back a name of a digit
+	    function digitName(digit) {
+	        switch (digit) {
+	            case 1: jsConsole.write("one"); break;
+	            case 2: jsConsole.write("two"); break;
+	            case 3: jsConsole.write("three"); break;
+	            case 4: jsConsole.write("four"); break;
+	            case 5: jsConsole.write("five"); break;
+	            case 6: jsConsole.write("six"); break;
+	            case 7: jsConsole.write("seven"); break;
+	            case 8: jsConsole.write("eight"); break;
+	            case 9: jsConsole.write("nine"); break;
+	            default: jsConsole.write(''); break;
+	        }
+	    }
+	</script>
+</body>
+</html>
